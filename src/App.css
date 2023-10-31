@@ -1,0 +1,52 @@
+.main-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+}
+
+.booklist {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(min(10rem, 100%), 1fr));
+  list-style: none;
+}
+
+.book-container img{
+  height: 16rem;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.booksreadinglist {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(min(10rem, 100%), 1fr));
+  list-style: none;
+}
+
+.bookreading-container {
+  background-color: aqua;
+  text-align: center;
+}
+
+.bookreading-container img {
+  height: 16rem;
+  border: 1px solid #ccc;
+}
+
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+
+.remove-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}

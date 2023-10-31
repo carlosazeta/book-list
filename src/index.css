@@ -1,0 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+:root {
+  background-color: bisque;
+  font-family: 'Inter', sans-serif, system-ui;
+  font-size: 16px;
+}

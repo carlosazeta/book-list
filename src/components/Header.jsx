@@ -1,7 +1,8 @@
 import { useState } from 'react'
 
-export function Header ({ numberOfAvailableBooks, booksToReading, filterBooksByGenre }) {
+export function Header ({ numberOfAvailableBooks, booksToReading, filterBooksByGenre, filterBooksByPages }) {
   const [selectedGenre, setSelectedGenre] = useState('todos')
+
   const numberOfBooksToRead = booksToReading.length
 
   const handleDropdownChange = (event) => {
@@ -18,8 +19,8 @@ export function Header ({ numberOfAvailableBooks, booksToReading, filterBooksByG
         <label htmlFor='genero'>Ordenar por genero</label>
         <select
           id='genero'
-          value={selectedGenre}
           onChange={handleDropdownChange}
+          value={selectedGenre}
         >
           <option value='Todos'>Todos</option>
           <option value='Fantasía'>Fantasía</option>

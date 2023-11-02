@@ -1,17 +1,13 @@
 import { useState } from 'react'
 
-export function Header ({ numberOfAvailableBooks, booksToReading, filteredBooksByGenre, setFilteredBooksByGenre }) {
+export function Header ({ numberOfAvailableBooks, booksToReading, filterBooksByGenre }) {
+  const [selectedGenre, setSelectedGenre] = useState('todos')
   const numberOfBooksToRead = booksToReading.length
-  const [selectedGenre, setSelectedGenre] = useState()
 
   const handleDropdownChange = (event) => {
     const genre = event.target.value
-    if (genre === 'todos') {
-      setFilteredBooksByGenre(filteredBooksByGenre)
-    } else {
-      const filteredBooks = filteredBooksByGenre.filter((book) => book.genre === genre)
-      setFilteredBooksByGenre(filteredBooks)
-    }
+    setSelectedGenre(genre)
+    filterBooksByGenre(genre)
   }
 
   return (
@@ -25,11 +21,11 @@ export function Header ({ numberOfAvailableBooks, booksToReading, filteredBooksB
           value={selectedGenre}
           onChange={handleDropdownChange}
         >
-          <option value='todos'>Todos</option>
-          <option value='fantasía'>Fantasía</option>
-          <option value='ciencia ficción'>Ciencia ficción</option>
-          <option value='zombies'>Zombies</option>
-          <option value='terror'>Terror</option>
+          <option value='Todos'>Todos</option>
+          <option value='Fantasía'>Fantasía</option>
+          <option value='Ciencia ficción'>Ciencia ficción</option>
+          <option value='Zombies'>Zombies</option>
+          <option value='Terror'>Terror</option>
         </select>
       </div>
     </header>

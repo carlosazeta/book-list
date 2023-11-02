@@ -3,6 +3,7 @@ export function Book ({ id, title, pages, genre, cover, addBookToReadinglist }) 
     const book = {
       id,
       title,
+      genre,
       cover
     }
 

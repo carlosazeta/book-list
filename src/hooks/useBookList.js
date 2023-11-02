@@ -2,8 +2,9 @@ import { useEffect, useReducer } from 'react'
 import booksData from '../mocks/books.json'
 
 const initialState = {
-  booksToReading: [],
   availableBooks: booksData.library,
+  booksToReading: [],
+  booksFilteredByGenre: booksData.library,
   numberOfAvailableBooks: null
 }
 
@@ -30,6 +31,20 @@ const readingListReducer = (state, action) => {
         ...state,
         numberOfAvailableBooks: action.numberOfAvailableBooks
       }
+    case 'FILTER_BOOKS_BY_GENRE':
+      if (action.bookGenre === 'Todos') {
+        return {
+          ...state,
+          booksFilteredByGenre: state.availableBooks
+        }
+      } else {
+        return {
+          ...state,
+          booksFilteredByGenre: state.availableBooks.filter(item => {
+            return item.book.genre === action.bookGenre
+          })
+        }
+      }
     default:
       return state
   }
@@ -46,10 +61,14 @@ export function useBookList () {
     dispatch({ type: 'REMOVE_BOOK_FROM_READING_LIST', bookId })
   }
 
+  const filterBooksByGenre = (bookGenre) => {
+    dispatch({ type: 'FILTER_BOOKS_BY_GENRE', bookGenre })
+  }
+
   useEffect(() => {
     const numberOfAvailableBooks = state.availableBooks.length - state.booksToReading.length
     dispatch({ type: 'UPDATE_AVAILABLE_BOOKS', numberOfAvailableBooks })
   }, [state.availableBooks, state.booksToReading])
 
-  return { state, dispatch, addBookToReadingList, removeBookFromReadingList }
+  return { state, dispatch, addBookToReadingList, removeBookFromReadingList, filterBooksByGenre }
 }

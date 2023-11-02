@@ -1,8 +1,8 @@
 import { Book } from './Book'
-export function BookList ({ availableBooks, addBookToReadinglist, filteredBooksByGenre }) {
+export function BookList ({ availableBooks, addBookToReadinglist, booksFilteredByGenre }) {
   return (
     <ul className='booklist'>
-      {availableBooks.map(item => {
+      {booksFilteredByGenre.map(item => {
         const book = item.book
         return (
           <li key={book.ISBN}>

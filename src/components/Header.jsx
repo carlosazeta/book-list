@@ -12,11 +12,12 @@ export function Header ({ numberOfAvailableBooks, booksToReading, filterBooksByG
   }
 
   return (
-    <header>
-      <p>{numberOfAvailableBooks} Libros disponibles</p>
-      <small>{numberOfBooksToRead} en la lista de lectura</small>
-      <div>
-        <label htmlFor='genero'>Ordenar por genero</label>
+    <header className='header'>
+      <div className='header-info-container'>
+      <p> <span className='header-number'>{numberOfAvailableBooks}</span> libros disponibles</p>
+      <small><span className='header-number'>{numberOfBooksToRead}</span> en la lista de lectura</small>
+      </div>
+      <div className='header-filter-container'>
         <select
           id='genero'
           onChange={handleDropdownChange}

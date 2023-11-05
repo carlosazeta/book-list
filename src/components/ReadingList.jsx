@@ -2,9 +2,9 @@ import { ReadingBook } from './ReadingBook'
 
 export function ReadingList ({ booksToReading, removeBookFromReadingList }) {
   return (
-    <div className='bookreading-container'>
+    <div className='book-reading-container'>
       <h3>Reading List</h3>
-      <ul className='booksreadinglist'>
+      <ul className='book-reading-list'>
         {booksToReading.map(book => (
           <li key={book.id}>
             <ReadingBook

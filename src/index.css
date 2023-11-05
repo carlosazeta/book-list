@@ -1,7 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
 :root {
-  background-color: bisque;
+  background: #E0C6AD;
+  color: #FFFAFA;
   font-family: 'Inter', sans-serif, system-ui;
+  font-weight: 700;
   font-size: 16px;
+  font-smooth: auto;
+  margin: 40px;
+
+  --arrow-bg: rgba(255, 255, 255, 0.3);
+  --arrow-icon: url(https://upload.wikimedia.org/wikipedia/commons/9/9d/Caret_down_font_awesome_whitevariation.svg);
+  --option-bg: white;
+  --select-bg: rgba(255, 255, 255, 0.2);
 }

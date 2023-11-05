@@ -1,3 +1,29 @@
+.header {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  margin: 0 0 60px 10px;
+}
+
+.header-info-container {
+  display: flex;
+  flex-direction: column;
+  margin-right: 40px;
+  gap: 20px;
+}
+
+.header-filter-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+}
+
+.header-number {
+  font-size: 22px;
+  color: #8c988d;
+}
+
 .main-container {
   width: 100%;
   display: grid;
@@ -7,32 +33,51 @@
 
 .booklist {
   display: grid;
-  grid-gap: 1rem;
+  grid-gap: 1.2rem;
   grid-template-columns: repeat(auto-fill, minmax(min(10rem, 100%), 1fr));
   list-style: none;
 }
 
+.book-container {
+  display: flex;
+  justify-content: center;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
 .book-container img{
   height: 16rem;
-  border: 1px solid #ccc;
+  width: 11rem;
   cursor: pointer;
 }
 
-.booksreadinglist {
+.book-container:hover {
+  transform: translateY(-5px);
+  opacity: 0.8;
+}
+
+.book-reading-container {
+  width: 600px;
+  background: rgb(163,178,164);
+  background: linear-gradient(180deg, rgba(163,178,164,0.6629026610644257) 7%, rgba(224,198,173,1) 100%);
+  border-radius: 18px;
+  text-align: center;
+}
+
+.book-reading-container h3 {
+  font-size: 20px;
+  padding: 12px 0px 16px 0px;
+}
+
+.book-reading-list {
   display: grid;
   grid-gap: 1rem;
   grid-template-columns: repeat(auto-fill, minmax(min(10rem, 100%), 1fr));
   list-style: none;
 }
 
-.bookreading-container {
-  background-color: aqua;
-  text-align: center;
-}
-
-.bookreading-container img {
+.book-reading-container img {
   height: 16rem;
-  border: 1px solid #ccc;
+  width: 11rem;
 }
 
 .image-container {
@@ -44,9 +89,40 @@
   position: absolute;
   top: 0;
   right: 0;
-  background: red;
-  color: white;
+  background: #BA5B3F;
+  color: #FFFAFA;
   border: none;
   padding: 5px 10px;
+  border-bottom-left-radius: 8px;
   cursor: pointer;
+}
+
+select {
+  /* Reset */
+  appearance: none;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  /* Personalize */
+  width: 20rem;
+  padding: 1rem 4rem 1rem 1rem;
+  background: var(--arrow-icon) no-repeat right 0.8em center / 1.4em,
+    linear-gradient(to left, var(--arrow-bg) 3em, var(--select-bg) 3em);
+  color: #FFFAFA;
+  border-radius: 0.25em;
+  box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  /* Remove IE arrow */
+  &::-ms-expand {
+    display: none;
+  }
+  /* Remove focus outline */
+  &:focus {
+    outline: none;
+  }
+  /* <option> colors */
+  option {
+    color: inherit;
+    background-color: var(--option-bg);
+  }
 }

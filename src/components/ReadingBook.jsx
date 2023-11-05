@@ -4,7 +4,7 @@ export function ReadingBook ({ id, cover, title, removeBookFromReadingList }) {
   }
 
   return (
-    <div className='bookreading-container'>
+    <div>
       <div className='image-container'>
         <img src={cover} alt={title} />
         <button

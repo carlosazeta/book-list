@@ -1,8 +1,8 @@
-# React + Vite
+# Book List
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+App to add and remove books to your reading list. You can filter the list depending on the genre of the book.
 
-Currently, two official plugins are available:
+You can try it [HERE](https://book-list-nu-two.vercel.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+![booklist](https://github.com/carlosazeta/book-list/assets/78436847/6b562542-1200-4a33-9424-3db7146d62fe)

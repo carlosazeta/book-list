@@ -1,4 +1,4 @@
-export function Book ({ id, title, pages, genre, cover, addBookToReadinglist }) {
+export function Book ({ id, title, genre, cover, addBookToReadinglist }) {
   const handleAddToReadingList = () => {
     const book = {
       id,

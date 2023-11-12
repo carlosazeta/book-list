@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-export function Header ({ numberOfAvailableBooks, booksToReading, filterBooksByGenre, filterBooksByPages }) {
+export function Header ({ numberOfAvailableBooks, booksToReading, filterBooksByGenre }) {
   const [selectedGenre, setSelectedGenre] = useState('todos')
 
   const numberOfBooksToRead = booksToReading.length
